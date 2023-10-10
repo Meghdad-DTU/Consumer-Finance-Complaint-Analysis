@@ -34,9 +34,9 @@ class DataIngestionMetadata:
     def get_metadata_info(self) -> DataIngestionMetadataInfo:
         try:
             if not self.is_metadata_file_exist:
-                raise Exception(f"WARNING: No metadata file is available at {self.config.metadata_file_path}!")
+                raise Exception(f"WARNING: No metadata file is available at {self.metadata_file_path}!")
             
-            metadata = read_yaml_file(self.config.metadata_file_path)
+            metadata = read_yaml_file(self.metadata_file_path)
             metadata_info = DataIngestionMetadataInfo(**(metadata))
             logging.info("Metadata info is captured!")
             return metadata_info
