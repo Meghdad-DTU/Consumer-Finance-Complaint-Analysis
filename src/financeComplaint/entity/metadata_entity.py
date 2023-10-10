@@ -4,10 +4,18 @@ from pathlib import Path
 from financeComplaint.logger import logging
 from financeComplaint.exception import CustomException
 from financeComplaint.utils import read_yaml_file, write_yaml_file
+from dataclasses import dataclass
 from collections import namedtuple
 
+# option I
+#DataIngestionMetadataInfo = namedtuple("DataIngestionMetaDataInfo", ['from_date', 'to_date', 'data_file_path'])
 
-DataIngestionMetadataInfo = namedtuple("DataIngestionMetaDataInfo", ['from_date', 'to_date', 'data_file_path'])
+# option: II
+@dataclass(frozen=True)
+class DataIngestionMetadataInfo:
+    from_date: str
+    to_date: str
+    data_file_path: Path
 
 
 class DataIngestionMetadata:
