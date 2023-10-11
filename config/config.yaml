@@ -4,7 +4,7 @@ artifacts_root: artifacts
 data_ingestion:
   ROOT_DIR: artifacts/data_ingestion
   FEATURE_STORE_DIR: artifacts/data_ingestion/feature_store
-  MIN_START_DATE: '2023-07-01'
+  MIN_START_DATE: '2023-01-01'
   FILE_NAME: finance_complaint
   METADATA_FILE_PATH: artifacts/data_ingestion/meta_info.yaml
   DATASOURCE_URL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?date_received_max=[to_date]&date_received_min=[from_date]&field=all&format=json
