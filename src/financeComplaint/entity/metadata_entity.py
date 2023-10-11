@@ -33,7 +33,8 @@ class DataIngestionMetadata:
                 to_date= to_date, 
                 data_file_path= data_file_path
             )
-            write_yaml_file(path= self.metadata_file_path, data=metadata_info._asdict())
+            
+            write_yaml_file(path= self.metadata_file_path, data=metadata_info.__dict__)
         
         except Exception as e:
             raise CustomException(e, sys)
