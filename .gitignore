@@ -161,3 +161,6 @@ cython_debug/
 
 # aws credentials
 secrets.yaml
+
+# artifacts
+artifacts/
