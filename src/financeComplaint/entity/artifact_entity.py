@@ -9,6 +9,6 @@ class DataIngestionArtifact:
     
 
 @dataclass(frozen=True)
-class DataValidationArtifac:
+class DataValidationArtifact:
     accepted_data_file_path: Path
     rejected_data_dir: Path
