@@ -7,3 +7,8 @@ class DataIngestionArtifact:
     downloaded_dir: Path
     metadata_file_path: Path
     
+
+@dataclass(frozen=True)
+class DataValidationArtifac:
+    accepted_data_file_path: Path
+    rejected_data_dir: Path
