@@ -9,3 +9,7 @@ data_ingestion:
   METADATA_FILE_PATH: artifacts/data_ingestion/meta_info.yaml
   DATASOURCE_URL: https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?date_received_max=[to_date]&date_received_min=[from_date]&field=all&format=json
   
+data_validation:
+  ROOT_DIR: artifacts/data_validation
+  FILE_NAME: finance_complaint
+  
