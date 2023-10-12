@@ -15,3 +15,11 @@ class DataIngestionConfig:
     min_start_date: str
     file_name: str    
     datasource_url: str
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir: Path
+    feature_store_file_path: Path
+    accepted_data_dir: Path
+    rejected_data_dir: Path
+    file_name: str

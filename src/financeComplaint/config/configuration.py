@@ -3,7 +3,8 @@ import os
 from financeComplaint.constants import *
 from financeComplaint.utils import read_yaml_file, create_directories
 from financeComplaint.entity.metadata_entity import DataIngestionMetadata
-from financeComplaint.entity.config_entity import DataIngestionConfig
+from financeComplaint.entity.config_entity import (DataIngestionConfig,
+                                                   DataValidationConfig)
 
 
 class ConfigurationManager:
@@ -91,5 +92,25 @@ class ConfigurationManager:
 
         )
 
-
         return data_ingestion_config
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+        SUB_ROOT_DIR = os.path.join(config.ROOT_DIR, self.timestamp)
+        ACCEPTED_DATA_DIR = os.path.join(SUB_ROOT_DIR, 'accepted_data')
+        REJECTED_DATA_DIR = os.path.join(SUB_ROOT_DIR, 'rejected_data')
+        FEATURE_STORE_FILE_PATH = os.path.join(self.config.data_ingestion.FEATURE_STORE_DIR,
+                                               self.config.data_ingestion.FILE_NAME)
+
+        create_directories([config.ROOT_DIR, ACCEPTED_DATA_DIR, REJECTED_DATA_DIR ])
+
+        data_validation_config = DataValidationConfig(
+            root_dir = config.ROOT_DIR,
+            feature_store_file_path= FEATURE_STORE_FILE_PATH,
+            accepted_data_dir = ACCEPTED_DATA_DIR,
+            rejected_data_dir = REJECTED_DATA_DIR,
+            file_name= config.FILE_NAME,
+
+        )
+
+        return data_validation_config
