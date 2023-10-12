@@ -128,8 +128,6 @@ class FinanceDataSchema:
                    [self.col_date_sent_to_company, self.col_date_received]
         return features
 
-
-
     @property
     def unwanted_columns(self) -> List[str]:
         features = [

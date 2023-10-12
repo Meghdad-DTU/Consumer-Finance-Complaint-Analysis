@@ -15,7 +15,7 @@ import time
 from financeComplaint.entity.artifact_entity import DataIngestionArtifact
 from financeComplaint.entity.metadata_entity import DataIngestionMetadata
 from financeComplaint.entity.config_entity import DataIngestionConfig
-from financeComplaint.pipeline.spark_manager import spark_session
+from financeComplaint.config.spark_manager import spark_session
 
 
 
